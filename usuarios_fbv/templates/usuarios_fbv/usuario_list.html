@@ -1,0 +1,11 @@
+<h1>Usuarios FBV</h1>
+<ul>
+    {% for usuario in object_list %}
+    <li>{{ usuario.nome }}  {{ usuario.data_nascimento }} {{ usuario.email }} {{ usuario.endereco }} {{ usuario.operadora }}
+    <a href="{% url 'usuarios_fbv:usuario_edit' usuario.id %}">edit</a>
+    <a href="{% url 'usuarios_fbv:usuario_delete' usuario.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'usuarios_fbv:usuario_new' %}">New</a>
